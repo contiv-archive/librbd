@@ -30,7 +30,7 @@ func main() {
 		Secret:    "s3kr1t",
 	}
 
-	pool, err := GetPool(config, "rbd")
+	pool, err := librbd.GetPool(config, "rbd")
 	if err != nil {
 		panic(err)
 	}
@@ -47,7 +47,7 @@ func main() {
 		panic(err)
 	}
 
-	device, err := img.MapDevice()
+	_, err := img.MapDevice()
 	if err != nil {
 		panic(err)
 	}
